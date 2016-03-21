@@ -16,5 +16,5 @@ WORKDIR /home/nginx
 RUN git clone git://github.com/arut/nginx-rtmp-module.git
 RUN sudo mkdir /var/www && sudo cp /home/nginx/nginx-rtmp-module/stat.xsl /var/www/stat.xsl && sudo chown -R nginx:nginx /var/www
 RUN wget http://nginx.org/download/nginx-1.2.4.tar.gz && tar xzf nginx-1.2.4.tar.gz
-RUN cd ./nginx-1.2.4 ./configure --with-ipv6 --add-module=/home/nginx/nginx-rtmp-module && make
+RUN cd ./nginx-1.2.4 && ./configure --with-ipv6 --add-module=/home/nginx/nginx-rtmp-module && make
 RUN cd ./nginx-1.24/ && sudo make install
